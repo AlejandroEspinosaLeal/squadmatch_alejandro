@@ -1,3 +1,4 @@
+// Entidad 1: juegos competitivos
 export const juegos = [
   {
     id: 1,
@@ -29,6 +30,7 @@ export const juegos = [
   },
 ];
 
+// Entidad 2: jugadores. El campo juegoId los relaciona con el id de un juego
 export const jugadores = [
   {
     id: 1,
