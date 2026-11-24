@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SquadMatch - Buscar Compañeros</title>
+    <title>SquadMatch · Contacto y Mensajes enviados</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,18 +11,19 @@
         <aside class="menu-lateral">
             <div>
                 <div class="logo">
-                    <span class="logo-icono">S</span>
+                    <span class="logo-icono">L</span>
                     <span class="logo-texto">SquadMatch</span>
                 </div>
 
                 <nav class="navegacion">
                     <a href="index.html" class="enlace">Jugadores Compatibles</a>
-                    <a href="crear.html" class="enlace activo">Buscar Compañeros</a>
+                    <a href="usuarios.html" class="enlace">Usuarios</a>
+                    <a href="crear.html" class="enlace activo">Contacto</a>
                 </nav>
             </div>
 
             <div class="perfil">
-                <div class="avatar">J1</div>
+                <div class="avatar">AV</div>
                 <div>
                     <p class="perfil-nombre">Jugador_1</p>
                     <p class="perfil-karma">★ 4.9 (42)</p>
@@ -32,9 +33,123 @@
 
         <main class="contenido">
             <header class="cabecera">
-                <h1>Buscar compañeros de Equipo</h1>
+                <h1>Contacto y Soporte de SquadMatch</h1>
             </header>
+
+            <div class="columnas">
+                <section class="tarjeta-busqueda-wf">
+                    <form id="form-contacto" class="form-busqueda-wf" novalidate>
+                        <div class="bloque-wf">
+                            <p class="titulo-bloque-wf">DATOS DEL JUGADOR</p>
+                            <div class="fila-doble-wf">
+                                <div class="campo">
+                                    <label for="con-nombre">Nombre</label>
+                                    <input
+                                        type="text"
+                                        id="con-nombre"
+                                        name="nombre"
+                                        placeholder="Tu nombre o GamerTag"
+                                        required
+                                        minlength="3"
+                                        maxlength="40"
+                                        aria-describedby="error-con-nombre"
+                                    >
+                                    <p id="error-con-nombre" class="error-msg"></p>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="con-email">Correo</label>
+                                    <input
+                                        type="email"
+                                        id="con-email"
+                                        name="email"
+                                        placeholder="jugador@correo.com"
+                                        required
+                                        maxlength="100"
+                                        aria-describedby="error-con-email"
+                                    >
+                                    <p id="error-con-email" class="error-msg"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bloque-wf">
+                            <p class="titulo-bloque-wf">CONTACTO Y MOTIVO</p>
+                            <div class="fila-doble-wf">
+                                <div class="campo">
+                                    <label for="con-telefono">Teléfono (opcional)</label>
+                                    <input
+                                        type="tel"
+                                        id="con-telefono"
+                                        name="telefono"
+                                        placeholder="612345678"
+                                        maxlength="9"
+                                        aria-describedby="error-con-telefono"
+                                    >
+                                    <p id="error-con-telefono" class="error-msg"></p>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="con-motivo">Motivo</label>
+                                    <select
+                                        id="con-motivo"
+                                        name="motivo"
+                                        required
+                                        aria-describedby="error-con-motivo"
+                                    >
+                                        <option value="">Selecciona un motivo</option>
+                                        <option value="Reportar comportamiento tóxico">Reportar comportamiento tóxico</option>
+                                        <option value="Solicitar verificación de cuenta Riot / Steam">Solicitar verificación de cuenta Riot / Steam</option>
+                                        <option value="Incidencia con una partida o sala de quedada">Incidencia con una partida o sala de quedada</option>
+                                        <option value="Proponer un torneo o squad fijo">Proponer un torneo o squad fijo</option>
+                                    </select>
+                                    <p id="error-con-motivo" class="error-msg"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bloque-wf">
+                            <p class="titulo-bloque-wf">PREFERENCIA DE CONTACTO</p>
+                            <label class="label-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="con-llamar"
+                                    name="preferenciaLlamada"
+                                >
+                                <span>Prefiero que me llaméis</span>
+                            </label>
+                        </div>
+
+                        <div class="bloque-wf">
+                            <div class="cabecera-campo">
+                                <label for="con-mensaje" class="titulo-bloque-wf">MENSAJE</label>
+                                <span id="contador-mensaje" class="contador">0 / 300</span>
+                            </div>
+                            <textarea
+                                id="con-mensaje"
+                                name="mensaje"
+                                rows="4"
+                                placeholder="Escribe aquí los detalles (entre 15 y 300 caracteres)..."
+                                required
+                                minlength="15"
+                                maxlength="300"
+                                aria-describedby="error-con-mensaje"
+                            ></textarea>
+                            <p id="error-con-mensaje" class="error-msg"></p>
+                        </div>
+
+                        <button type="submit" class="boton-negro-ancho">ENVIAR MENSAJE</button>
+                    </form>
+                </section>
+
+                <section>
+                    <h2>Mensajes enviados</h2>
+                    <div id="listado-mensajes" class="listado"></div>
+                </section>
+            </div>
         </main>
     </div>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

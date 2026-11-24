@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SquadMatch · Registro y Usuarios</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="contenedor-app">
+        <aside class="menu-lateral">
+            <div>
+                <div class="logo">
+                    <span class="logo-icono">L</span>
+                    <span class="logo-texto">SquadMatch</span>
+                </div>
+
+                <nav class="navegacion">
+                    <a href="index.html" class="enlace">Jugadores Compatibles</a>
+                    <a href="usuarios.html" class="enlace activo">Usuarios</a>
+                    <a href="crear.html" class="enlace">Contacto</a>
+                </nav>
+            </div>
+
+            <div class="perfil">
+                <div class="avatar">AV</div>
+                <div>
+                    <p class="perfil-nombre">Jugador_1</p>
+                    <p class="perfil-karma">★ 4.9 (42)</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="contenido">
+            <header class="cabecera">
+                <h1>Registro y Usuarios</h1>
+            </header>
+
+            <div class="columnas">
+                <section class="tarjeta-auth">
+                    <h2 id="titulo-form-registro" class="titulo-auth">Crea tu cuenta</h2>
+
+                    <div class="tabs-capsula">
+                        <span class="tab-item activa">Crear cuenta</span>
+                        <span class="tab-item">Ya soy miembro</span>
+                    </div>
+
+                    <form id="form-registro" class="form-auth" novalidate>
+                        <div class="campo">
+                            <label for="reg-username">Nombre de usuario</label>
+                            <input
+                                type="text"
+                                id="reg-username"
+                                name="username"
+                                placeholder="GamerTag_MVP"
+                                required
+                                minlength="3"
+                                maxlength="25"
+                                aria-describedby="error-reg-username"
+                            >
+                            <p id="error-reg-username" class="error-msg"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="reg-email">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="reg-email"
+                                name="email"
+                                placeholder="jugador@correo.com"
+                                required
+                                maxlength="100"
+                                aria-describedby="error-reg-email"
+                            >
+                            <p id="error-reg-email" class="error-msg"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="reg-password">Contraseña</label>
+                            <input
+                                type="password"
+                                id="reg-password"
+                                name="password"
+                                placeholder="Mínimo 8 caracteres, 1 mayúscula y 1 número"
+                                required
+                                minlength="8"
+                                maxlength="50"
+                                aria-describedby="error-reg-password"
+                            >
+                            <p id="error-reg-password" class="error-msg"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="reg-password2">Repetir contraseña</label>
+                            <input
+                                type="password"
+                                id="reg-password2"
+                                name="password2"
+                                placeholder="Repite la contraseña"
+                                required
+                                minlength="8"
+                                maxlength="50"
+                                aria-describedby="error-reg-password2"
+                            >
+                            <p id="error-reg-password2" class="error-msg"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="reg-fecha">Fecha de nacimiento</label>
+                            <input
+                                type="date"
+                                id="reg-fecha"
+                                name="fechaNacimiento"
+                                required
+                                min="1930-01-01"
+                                max="2010-12-31"
+                                aria-describedby="error-reg-fecha"
+                            >
+                            <p id="error-reg-fecha" class="error-msg"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label class="label-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="reg-condiciones"
+                                    name="condiciones"
+                                    required
+                                    aria-describedby="error-reg-condiciones"
+                                >
+                                <span>Acepto las condiciones y normas anti-toxicidad</span>
+                            </label>
+                            <p id="error-reg-condiciones" class="error-msg"></p>
+                        </div>
+
+                        <div class="botones-form">
+                            <button type="submit" id="btn-submit-registro" class="boton-negro-ancho">REGISTRARSE Y CONTINUAR</button>
+                            <button type="button" id="btn-cancelar-edicion" class="boton boton-secundario oculto">Cancelar</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section>
+                    <h2>Usuarios</h2>
+                    <div id="listado-usuarios" class="listado"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
